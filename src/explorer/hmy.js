@@ -45,7 +45,7 @@ function sleep(ms) {
 async function walletInit() {
   let retry = 0
   while (!window.harmony && retry++ < 2) await sleep(1000)
-  if (!window.harmony) throw { message: '请安装麦子钱包' }
+  if (!window.harmony) throw { message: 'Please install wallet' }
 }
 
 let address = null
@@ -54,7 +54,7 @@ async function login() {
   let account = await window.harmony.getAccount()
   address = account.address
   return account
-  //return {address:'one16xh2u9r4677egx4x3s0u966ave90l37hh7wq72'}
+  //return {address:'one1xufssa9hq0ezd72tt3aegz3zk0ktzelw2w923c'}
 }
 
 async function logout() {

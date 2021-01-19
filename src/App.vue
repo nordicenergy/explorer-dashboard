@@ -143,7 +143,7 @@ body,
     }
     h1 {
       font-size: 1.3em;
-      color: #1b295e;
+      color: #101b3c;
       font-weight: 500;
     }
     h2 {
@@ -174,7 +174,7 @@ body,
       font-family: Nunito;
       font-size: 16px;
       font-weight: 500;
-      color: #212d5e;
+      color: #141b39;
       -webkit-letter-spacing: 0.5px;
       -moz-letter-spacing: 0.5px;
       -ms-letter-spacing: 0.5px;
@@ -221,7 +221,7 @@ body,
     padding: @space-md;
     .data-num {
       font-size: 2em;
-      color: #1b295e;
+      color: #101b3c;
     }
     h1 {
       font-size: 1em;
@@ -301,7 +301,7 @@ body,
     font-family: Nunito;
     font-size: 16px;
     font-weight: 500;
-    color: #212d5e;
+    color: #141b39;
   }
 
   .td {
