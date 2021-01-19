@@ -89,13 +89,13 @@ export default {
       }
       const palette = [
         '#00ffff',
-        '#24dbff',
+        '#002b33',
         '#49b6ff',
-        '#6d92ff',
+        '#000d33',
         '#926dff',
-        '#b649ff',
-        '#db24ff',
-        '#ff00ff',
+        '#1f0033',
+        '#15001a',
+        '#000033',
       ]
       const c = this.hrc20Info.name.charCodeAt(0) % palette.length
       const backgroundColor = palette[c]
