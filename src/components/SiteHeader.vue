@@ -14,7 +14,7 @@
     height: 7em;
     width: 10em;
     box-sizing: border-box;
-    background-image: url(../assets/harmony-logo-white.svg);
+    background-image: url(../assets/bitfinance-logo-white.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 90%;
@@ -115,7 +115,7 @@
       <div class="navbar-header">
         <div class="site-brand flex-horizontal">
           <router-link class="navbar-brand" to="/" />
-          <span class="tagline">Open Consensus for 10B</span>
+          <span class="tagline">Decentralized Finance</span>
         </div>
         <div class="header-menu">
           <MenuItem text="Tokens">

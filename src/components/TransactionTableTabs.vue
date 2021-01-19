@@ -81,7 +81,7 @@ export default {
 
     &.active {
       position: relative;
-      color: #1b295e;
+      color: #0b1228;
       // color: var(--color-table-link);
 
       &:after {
@@ -91,7 +91,7 @@ export default {
         width: 100%;
         height: 2px;
         background-color: var(--color-table-link);
-        // background-color: #1b295e;
+        // background-color: #0b1228;
         opacity: 0.8;
         border-radius: 10px;
         bottom: -17px;

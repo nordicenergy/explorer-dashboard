@@ -17,8 +17,8 @@
                 <VueCtkDateTimePicker
                   v-model="cursor"
                   format="YYYY-MM-DD hh:mm"
-                  color="#33cbda"
-                  button-color="#33cbda"
+                  color="#00004d"
+                  button-color="#00004d"
                   :no-clear-button="true"
                   :max-date="maxDate"
                 />

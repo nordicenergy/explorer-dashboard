@@ -42,15 +42,15 @@ footer {
         <font-awesome-icon :icon="['fas', 'user-friends']" />
       </a>
 
-      <a href="https://medium.com/harmony-one" target="_blank">
+      <a href="https://medium.com/bitfinance_solutions" target="_blank">
         <font-awesome-icon :icon="['fab', 'medium']" />
       </a>
 
-      <a href="https://twitter.com/harmonyprotocol" target="_blank">
+      <a href="https://twitter.com/bitfinance_solutions" target="_blank">
         <font-awesome-icon :icon="['fab', 'twitter']" />
       </a>
 
-      <a href="https://t.me/harmony_one" target="_blank">
+      <a href="https://t.me/bitfinance_solutions" target="_blank">
         <font-awesome-icon :icon="['fab', 'telegram']" />
       </a>
     </div>
@@ -60,7 +60,7 @@ footer {
       <a href="#" target="_blank">Privacy Policy</a>
     </div>
     <div class="copyright container">
-      Copyright © 2020 Harmony | All Rights Reserved
+      Copyright © 2020 BitFinance | All Rights Reserved
     </div>
   </footer>
 </template>

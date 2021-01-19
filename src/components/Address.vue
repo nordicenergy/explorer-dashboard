@@ -116,7 +116,7 @@ export default {
 .avatar {
   border-radius: 100%;
   display: table-cell;
-  background-color: #47e0cd;
+  background-color: #000033;
   color: white;
   height: 16px;
   width: 16px;

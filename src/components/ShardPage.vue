@@ -4,7 +4,7 @@
 .page-title {
   font-size: 1.8em;
   margin: @space-sm;
-  color: #1b295e;
+  color: #050914;
   text-transform: uppercase;
   font-weight: 500;
 }

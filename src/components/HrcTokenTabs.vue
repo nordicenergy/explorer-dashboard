@@ -89,7 +89,7 @@ export default {
     &.active {
       position: relative;
       display: inline-block;
-      color: #1b295e;
+      color: #050914;
       // color: var(--color-table-link);
     }
   }
@@ -99,7 +99,7 @@ export default {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b295e;
+  color: #050914;
   font-size: 1.1em;
   font-family: 'Nunito', Helvetica, Arial, sans-serif;
   font-weight: 500;
