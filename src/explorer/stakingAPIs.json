@@ -1,0 +1,97 @@
+[{
+        "name": "Account Methods",
+        "methods": [
+            "ngy_getBalanceByBlockNumber",
+            "ngy_getTransactionCount",
+            "ngy_getBalance",
+            "ngy_getAccountNonce",
+            "ngy_setLogVerbosity",
+            "address"
+        ]
+    },
+    {
+        "name": "Filter Methods",
+        "methods": [
+            "ngy_getFilterLogs",
+            "ngy_newFilter",
+            "ngy_newPendingTransactionFilter",
+            "ngy_newBlockFilter",
+            "ngy_getFilterChanges",
+            "ngy_getLogs"
+        ]
+    },
+    {
+        "name": "Transaction Related Methods",
+        "methods": [
+            "ngy_getStakingTransactionByBlockHashAndIndex",
+            "ngy_getStakingTransactionByBlockNumberAndIndex",
+            "ngy_getStakingTransactionByHash",
+            "ngy_getCurrentTransactionErrorSink",
+            "ngy_getPendingCrossLinks",
+            "ngy_getPendingCXReceipts",
+            "ngy_getCXReceiptByHash",
+            "ngy_pendingTransactions",
+            "ngy_sendRawStakingTransaction",
+            "ngy_getTransactionsHistory",
+            "ngy_sendRawTransaction",
+            "ngy_getTransactionReceipt",
+            "ngy_getBlockTransactionCountByHash",
+            "ngy_getBlockTransactionCountByNumber",
+            "ngy_getTransactionByHash",
+            "ngy_getTransactionByBlockNumberAndIndex",
+            "ngy_getTransactionByBlockHashAndIndex",
+            "ngy_getBlockByNumber",
+            "ngy_getBlockByHash",
+            "ngy_getBlocks",
+            "ngy_getCurrentStakingErrorSink",
+            "tx"
+        ]
+    },
+    {
+        "name": "Contract Related Methods",
+        "methods": [
+            "ngy_estimateGas",
+            "ngy_getStorageAt",
+            "ngy_call",
+            "ngy_getCode"
+        ]
+    },
+    {
+        "name": "Protocol Related Methods",
+        "methods": [
+            "ngy_isLastBlock",
+            "ngy_epochLastBlock",
+            "ngy_latestHeader",
+            "ngy_getShardingStructure",
+            "ngy_blockNumber",
+            "ngy_syncing",
+            "ngy_gasPrice",
+            "net_peerCount",
+            "ngy_getEpoch",
+            "ngy_getLeader"
+        ]
+    },
+    {
+        "name": "Staking Related Methods",
+        "methods": [
+            "ngy_getCirculatingSupply",
+            "ngy_getTotalSupply",
+            "ngy_getStakingNetworkInfo",
+            "ngy_getAllValidatorInformation",
+            "ngy_getCurrentUtilityMetrics",
+            "ngy_getDelegationsByValidator",
+            "ngy_getDelegationsByDelegatorAndValidator",
+            "ngy_getDelegationsByDelegator",
+            "ngy_getValidatorMetrics",
+            "ngy_getMedianRawStakeSnapshot",
+            "ngy_getActiveValidatorAddresses",
+            "ngy_getAllValidatorAddresses",
+            "ngy_getCurrentStakingErrorSink",
+            "ngy_getValidatorInformation",
+            "ngy_getValidators",
+            "ngy_getSignedBlocks",
+            "ngy_isBlockSigner",
+            "ngy_getBlockSigners"
+        ]
+    }
+]
