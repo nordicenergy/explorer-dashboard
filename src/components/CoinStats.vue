@@ -76,7 +76,7 @@
       >
         <div class="dashboard-card">
           <div class="card-title">
-            Total Supply NETs
+            Total Supply Nets
           </div>
           <div class="card-value currency">
             {{ stats.totalSupply | bigCurrencyNet }}
@@ -121,7 +121,7 @@ export default {
         maximumSignificantDigits: 5,
       }).format(value),
     bigCurrency: value => numeral(value).format('$ 0.00 a'),
-    bigCurrencyOne: value => numeral(value).format('0.00 a'),
+    bigCurrencyNet: value => numeral(value).format('0.00 a'),
   },
   props: ['stats'],
   data() {
@@ -133,7 +133,7 @@ export default {
   computed: {
     stylePriceChanged() {
       return {
-        color: this.stats.priceChange1d > 0 ? 'grey' : 'orange',
+        color: this.stats.priceChange1d > 0 ? 'green' : 'red',
       }
     },
   },

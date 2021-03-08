@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import Address from '@/components/Address'
+import Address from '@/compNetnts/Address'
 
 export default {
   name: 'ParseAddress',
-  components: {
+  compNetnts: {
     Address,
   },
   props: ['parseString'],
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     isAddress(s) {
-      return s.indexOf('net1') !== -1 && s.length === 42
+      return s.indexOf('Net1') !== -1 && s.length === 42
     },
     parse() {
       let pointer = 0
@@ -37,7 +37,7 @@ export default {
       const addresses = []
 
       while (true) {
-        pointer = s.indexOf('net1')
+        pointer = s.indexOf('Net1')
         if (pointer === -1 && i === 0) {
           this.processedString.push(s)
           return

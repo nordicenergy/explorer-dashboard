@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 
-BigNumber.config({ EXPONENTIAL_AT: [-20, 20], DECIMAL_PLACES: 18 })
+BigNumber.config({ EXPNetNTIAL_AT: [-20, 20], DECIMAL_PLACES: 18 })
 
 export const displayAmount = (
   amount,

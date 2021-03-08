@@ -66,7 +66,7 @@
             <th>Token</th>
             <th>Token Amount</th>
           </tr>
-          <tr v-for="tx in Nrc20TxsPage" :key="tx.tx.hash">
+          <tr v-for="tx in NRC20TxsPage" :key="tx.tx.hash">
             <td>
               <router-link :to="'/shard/' + tx.tx.shardID">
                 {{ tx.tx.shardID }}
@@ -78,17 +78,17 @@
               </router-link>
             </td>
             <td>
-              <Address :bech32="tx.nrc20tx.from" :show-raw="false" />
+              <Address :bech32="tx.NRC20tx.from" :show-raw="false" />
 
               <!--              <router-link :to="'/address/' + tx.tx.from">
-                {{ tx.nrc20tx.from | shorten }}
+                {{ tx.NRC20tx.from | shorten }}
               </router-link>-->
             </td>
             <td>
-              <Address :bech32="tx.nrc20tx.to" :show-raw="false" />
+              <Address :bech32="tx.NRC20tx.to" :show-raw="false" />
 
-              <!--              <router-link :to="'/address/' + tx.nrc20tx.to">
-                {{ tx.nrc20tx.to | shorten }}
+              <!--              <router-link :to="'/address/' + tx.NRC20tx.to">
+                {{ tx.NRC20tx.to | shorten }}
               </router-link>-->
             </td>
             <td>
@@ -98,7 +98,7 @@
               <Address :bech32="tx.tx.to" />
             </td>
             <td class="no-break wfont" style="max-width:200px;overflow:hidden">
-              {{ nrc20Balance(tx.tx.to, tx.nrc20tx.amount) }}
+              {{ NRC20Balance(tx.tx.to, tx.NRC20tx.amount) }}
             </td>
           </tr>
         </table>
@@ -111,7 +111,7 @@
 import Address from './Address'
 import { displayAmount } from '@/utils/displayAmount'
 
-const oneArgNrc20Methods = [
+const NetArgNRC20Methods = [
   //'transfer',
   'approve',
   'mint',
@@ -119,14 +119,14 @@ const oneArgNrc20Methods = [
   'burnFrom',
 ]
 
-const twoArgsNrc20Methods = [
+const twoArgsNRC20Methods = [
   //'transferFrom',
   'allowance',
 ]
 
 export default {
-  name: 'Nrc20TransactionsTable',
-  components: { Address },
+  name: 'NRC20TransactionsTable',
+  compNetnts: { Address },
   props: [
     'allTxs',
     'txCount',
@@ -154,22 +154,22 @@ export default {
         return this.allTxs.slice(begin, begin + this.pageSize)
       }
     },
-    Nrc20TxsPage() {
+    NRC20TxsPage() {
       //const start = this.pageSize * this.pageIndex;
-      //return this.Nrc20Txs.slice(start, start + this.pageSize);
-      return this.Nrc20Txs
+      //return this.NRC20Txs.slice(start, start + this.pageSize);
+      return this.NRC20Txs
     },
-    Nrc20Txs() {
-      const c = this.$store.data.hmy.contract(this.$store.data.HRC20_ABI)
+    NRC20Txs() {
+      const c = this.$store.data.ngy.contract(this.$store.data.NRC20_ABI)
       return this.txs.reduce((list, tx) => {
-        if (this.nrc20info(tx.to) == undefined) {
+        if (this.NRC20info(tx.to) == undefined) {
           return list
         }
         const decodeObj = c.decodeInput(tx.input)
         if (decodeObj.abiItem && decodeObj.abiItem.name == 'transfer')
           list.push({
             tx,
-            nrc20tx: {
+            NRC20tx: {
               from: tx.from,
               to: decodeObj.params[0],
               amount: decodeObj.params[1],
@@ -178,7 +178,7 @@ export default {
         else if (decodeObj.abiItem && decodeObj.abiItem.name == 'transferFrom')
           list.push({
             tx,
-            nrc20tx: {
+            NRC20tx: {
               from: decodeObj.params[0],
               to: decodeObj.params[1],
               amount: decodeObj.params[2],
@@ -186,11 +186,11 @@ export default {
           })
         else if (
           decodeObj.abiItem &&
-          oneArgNrc20Methods.includes(decodeObj.abiItem.name)
+          NetArgNRC20Methods.includes(decodeObj.abiItem.name)
         )
           list.push({
             tx,
-            nrc20tx: {
+            NRC20tx: {
               from: tx.from,
               to: decodeObj.params[0],
               amount: decodeObj.params[1],
@@ -198,11 +198,11 @@ export default {
           })
         else if (
           decodeObj.abiItem &&
-          twoArgsNrc20Methods.includes(decodeObj.abiItem.name)
+          twoArgsNRC20Methods.includes(decodeObj.abiItem.name)
         )
           list.push({
             tx,
-            nrc20tx: {
+            NRC20tx: {
               from: decodeObj.params[0],
               to: decodeObj.params[1],
               amount: decodeObj.params[2],
@@ -211,8 +211,8 @@ export default {
         return list
       }, [])
     },
-    Nrc20Address() {
-      return this.$store.data.Nrc20Address
+    NRC20Address() {
+      return this.$store.data.NRC20Address
     },
   },
   watch: {
@@ -238,7 +238,7 @@ export default {
       if (index < 0) index = 0
       if (index >= this.pageCount) index = this.pageCount - 1
 
-      const lastTxs = this.Nrc20Txs.slice(-1)[0].tx
+      const lastTxs = this.NRC20Txs.slice(-1)[0].tx
       const sortid =
         this.pageIndex + 1 == index
           ? Number(lastTxs.blockNumber) * 10000 +
@@ -263,19 +263,19 @@ export default {
       if (this.pageIndex === this.pageCount - 1) return
       this.goToPage(this.pageIndex + 1)
     },
-    nrc20info(id) {
-      return this.Nrc20Address[id]
+    NRC20info(id) {
+      return this.NRC20Address[id]
     },
-    nrc20Balance(id, amount) {
+    NRC20Balance(id, amount) {
       console.log(
         'amount',
         amount,
-        displayAmount(amount, this.nrc20info(id).decimals)
+        displayAmount(amount, this.NRC20info(id).decimals)
       )
       return (
-        displayAmount(amount, this.nrc20info(id).decimals) +
+        displayAmount(amount, this.NRC20info(id).decimals) +
         ' ' +
-        this.nrc20info(id).symbol
+        this.NRC20info(id).symbol
       )
     },
   },

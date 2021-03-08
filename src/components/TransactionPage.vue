@@ -47,7 +47,7 @@
               </tr>
               <tr>
                 <td class="td-title">
-                  NET Transferred
+                  Net Transferred
                 </td>
                 <td v-if="isStaking && transaction.type === 'EditValidator'">
                   -
@@ -169,7 +169,7 @@
                 <td class="td-title">
                   Network Fee
                 </td>
-                <td>{{ normalizedGas() }} NET</td>
+                <td>{{ normalizedGas() }} Net</td>
               </tr>
               <tr v-if="sequence">
                 <td class="td-title">
@@ -186,7 +186,7 @@
                                   <DecodeABI
                                       :abi="$store.data.NRC20_ABI"
                                       :data="transaction.input"
-                                      :is-nrc20="isNrc20(transaction.hash)"
+                                      :is-NRC20="isNRC20(transaction.hash)"
                                       :bech32="transaction.to"
                                   />
                                 </td>&ndash;&gt;
@@ -259,7 +259,7 @@
                       "
                     >
                       <br />
-                      NET transferred
+                      Net transferred
                       <b>{{ action.callWithInfo.traceCall.value | amount }}</b>
                       <br />
                     </span>
@@ -271,7 +271,7 @@
                     <br />
 
                     <div
-                      v-if="!action.displayString || !action.nrc20Method"
+                      v-if="!action.displayString || !action.NRC20Method"
                       style="font-size:10px;"
                     >
                       <expand-panel show-title="Data">
@@ -315,7 +315,7 @@ import {
 
 export default {
   name: 'TransactionPage',
-  components: {
+  compNetnts: {
     LoadingMessage,
     VueJsonPretty,
     Address,
@@ -490,7 +490,7 @@ export default {
     hexToUTF8(h) {
       try {
         let s = this.hexToAscii(h)
-        return decodeURIComponent(escape(s))
+        return decodeURICompNetnt(escape(s))
       } catch (e) {
         return null
         // return "[Unknown Binary Content]";
@@ -515,8 +515,8 @@ export default {
         fee
       )
     },
-    isNrc20(address) {
-      return this.$store.data.Nrc20Address[address] != undefined
+    isNRC20(address) {
+      return this.$store.data.NRC20Address[address] != undefined
     },
   },
 }

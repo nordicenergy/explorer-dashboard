@@ -1,4 +1,5 @@
-[{
+[
+    {
         "name": "Account Methods",
         "methods": [
             "ngy_getBalanceByBlockNumber",
@@ -26,7 +27,7 @@
             "ngy_getStakingTransactionByBlockHashAndIndex",
             "ngy_getStakingTransactionByBlockNumberAndIndex",
             "ngy_getStakingTransactionByHash",
-            "ngy_getCurrentTransactionErrorSink",
+            "ngy_getCurrentTransactiNetrrorSink",
             "ngy_getPendingCrossLinks",
             "ngy_getPendingCXReceipts",
             "ngy_getCXReceiptByHash",

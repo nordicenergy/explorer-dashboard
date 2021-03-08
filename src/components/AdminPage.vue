@@ -83,7 +83,7 @@ import SiteFooter from './SiteFooter'
 
 export default {
   name: 'AdminPage',
-  components: {
+  compNetnts: {
     SiteFooter,
   },
   data() {

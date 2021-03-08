@@ -130,7 +130,7 @@ import Address from './Address'
 
 export default {
   name: 'StakingTransactionsTable',
-  components: {
+  compNetnts: {
     Address,
   },
   props: [

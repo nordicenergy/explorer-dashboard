@@ -22,22 +22,22 @@
       :class="{ tabItem: true, active: value == 2 }"
       @click="() => onChange(2)"
     >
-      <span v-if="titlePostfixNrc20Tx" class="postfix">{{
-        titlePostfixNrc20Tx | number
+      <span v-if="titlePostfixNRC20Tx" class="postfix">{{
+        titlePostfixNRC20Tx | number
       }}</span>
       {{ titlePrefix }} NRC20 Transactions
     </span>
 
     <span
-      v-if="showNrc721txs"
+      v-if="shownrc721txs"
       :class="{ tabItem: true, active: value == 3 }"
       @click="() => onChange(3)"
     >
-      NRC721 Transfers
+      nrc721 Transfers
     </span>
 
     <span
-      v-if="showNrc721"
+      v-if="shownrc721"
       :class="{ tabItem: true, active: value == 4 }"
       @click="() => onChange(4)"
     >
@@ -50,14 +50,14 @@
 export default {
   name: 'TransactionTableTabs',
   props: [
-    'showNrc721',
-    'showNrc721txs',
+    'shownrc721',
+    'shownrc721txs',
     'value',
     'onChange',
     'titlePrefix',
     'titlePostfixTx',
     'titlePostfixStakingTx',
-    'titlePostfixNrc20Tx',
+    'titlePostfixNRC20Tx',
     'titlePostfixPendingTx',
   ],
 }
@@ -84,7 +84,7 @@ export default {
     font-family: Nunito;
     font-size: 16px;
     font-weight: 500;
-    //color: #212D5E;
+    //color: #997300;
     -webkit-letter-spacing: 0.5px;
     -moz-letter-spacing: 0.5px;
     -ms-letter-spacing: 0.5px;
@@ -99,17 +99,17 @@ export default {
 
     &.active {
       position: relative;
-      color: #997300;
+      color: #b38600;
       // color: var(--color-table-link);
 
       &:after {
-        display: none;
+        display: nNet;
         content: '';
         position: absolute;
         width: 100%;
         height: 2px;
         background-color: var(--color-table-link);
-        // background-color: #997300;
+        // background-color: #b38600;
         opacity: 0.8;
         border-radius: 10px;
         bottom: -17px;

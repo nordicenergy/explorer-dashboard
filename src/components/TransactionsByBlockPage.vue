@@ -59,7 +59,7 @@ const isObject = value => typeof value === 'object'
 
 export default {
   name: 'TransactionsByBlockPage',
-  components: {
+  compNetnts: {
     TransactionsTable,
     LoadingMessage,
   },

@@ -23,4 +23,4 @@ library.add(
   faUserFriends
 )
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.compNetnt('font-awesome-icon', FontAwesomeIcon)

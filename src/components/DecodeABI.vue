@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     contractInfo() {
-      const res = this.$store.data.Nrc20Address[this.bech32]
+      const res = this.$store.data.NRC20Address[this.bech32]
       return res
     },
     methodInfo() {

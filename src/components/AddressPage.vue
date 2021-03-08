@@ -27,7 +27,7 @@
 .avatar {
   border-radius: 100%;
   display: table-cell;
-  background-color: #cc9900;
+  background-color: #47e0cd;
   color: white;
   height: 25px;
   width: 25px;
@@ -40,7 +40,7 @@
   margin: 0;
 }
 
-.nrclogo {
+.hrclogo {
   vertical-align: text-bottom;
   border-radius: 0.25rem;
   width: 1.3em;
@@ -49,17 +49,17 @@
 }
 
 .selectItem {
-  border: none;
+  border: nNet;
   padding: 0;
   cursor: pointer;
   font-family: unset;
   color: unset;
   background-color: rgba(0, 0, 0, 0);
-  /*appearance: none;*/
+  /*appearance: nNet;*/
 }
 
 .selectItem:focus {
-  box-shadow: none !important;
+  box-shadow: nNet !important;
 }
 </style>
 
@@ -69,26 +69,26 @@
       <div v-if="showPanel" class="container">
         <div class="explorer-card">
           <header>
-            <h1 v-if="isNrc721(address.id)">
+            <h1 v-if="isnrc721(address.id)">
               <span>
-                NRC721 Token:
-                <span :style="bgStyle(isNrc721(address.id).name)">
-                  {{ isNrc721(address.id).name }} (<b>{{
-                    isNrc721(address.id).symbol
+                nrc721 Token:
+                <span :style="bgStyle(isnrc721(address.id).name)">
+                  {{ isnrc721(address.id).name }} (<b>{{
+                    isnrc721(address.id).symbol
                   }}</b
                 >)
                 </span>
               </span>
             </h1>
 
-            <h1 v-else-if="isNrc20(address.id)">
+            <h1 v-else-if="isNRC20(address.id)">
               NRC20 Token:
-              <!--              <span v-if="Nrc20Info.logo">
-                <img :src="Nrc20Info.logo" class="nrclogo" />
+              <!--              <span v-if="NRC20Info.logo">
+                <img :src="NRC20Info.logo" class="hrclogo" />
               </span>-->
-              <span v-if="!Nrc20Info.logo">
-                <span :style="bgStyle(Nrc20Info.name)">
-                  {{ Nrc20Info.name }} (<b>{{ Nrc20Info.symbol }}</b
+              <span v-if="!NRC20Info.logo">
+                <span :style="bgStyle(NRC20Info.name)">
+                  {{ NRC20Info.name }} (<b>{{ NRC20Info.symbol }}</b
                 >)
                 </span>
               </span>
@@ -101,21 +101,21 @@
           <div class="explorer-card-body">
             <section>
               <table class="explorer-table">
-                <tr v-if="isNrc721(address.id)">
+                <tr v-if="isnrc721(address.id)">
                   <td class="td-title">
                     Name(Symbol)
                   </td>
                   <td>
                     {{
-                      isNrc721(address.id).name +
+                      isnrc721(address.id).name +
                       "(" +
-                      isNrc721(address.id).symbol +
+                      isnrc721(address.id).symbol +
                       ")"
                     }}
                   </td>
                 </tr>
 
-                <tr v-if="isNrc721(address.id)">
+                <tr v-if="isnrc721(address.id)">
                   <td class="td-title">
                     Total Supply
                   </td>
@@ -124,7 +124,7 @@
                   </td>
                 </tr>
 
-                <tr v-if="isNrc721(address.id)">
+                <tr v-if="isnrc721(address.id)">
                   <td class="td-title">
                     Holders
                   </td>
@@ -142,7 +142,7 @@
                   </td>
                 </tr>
 
-                <tr v-if="isNrc721(address.id)">
+                <tr v-if="isnrc721(address.id)">
                   <td class="td-title">
                     Transfers
                   </td>
@@ -151,40 +151,40 @@
                   </td>
                 </tr>
 
-                <tr v-if="isNrc20(address.id)">
+                <tr v-if="isNRC20(address.id)">
                   <td class="td-title">
                     Name(Symbol)
                   </td>
                   <td>
-                    {{ Nrc20Info.name + "(" + Nrc20Info.symbol + ")" }}
+                    {{ NRC20Info.name + "(" + NRC20Info.symbol + ")" }}
                   </td>
                 </tr>
 
-                <tr v-if="isNrc20(address.id)">
+                <tr v-if="isNRC20(address.id)">
                   <td class="td-title">
                     Decimals
                   </td>
-                  <td>{{ Nrc20Info.decimals }}</td>
+                  <td>{{ NRC20Info.decimals }}</td>
                 </tr>
 
-                <tr v-if="isNrc20(address.id)">
+                <tr v-if="isNRC20(address.id)">
                   <td class="td-title">
                     Total Supply
                   </td>
-                  <td>{{ nrc20ActualTotalSupply || Nrc20Info.totalSupplyDisplay }}</td>
+                  <td>{{ NRC20ActualTotalSupply || NRC20Info.totalSupplyDisplay }}</td>
                 </tr>
 
                 <!-- <tr>
                   <td class="td-title">
                     Description
                   </td>
-                  <td>{{ Nrc20Info.description.en }}</td>
+                  <td>{{ NRC20Info.description.en }}</td>
                 </tr>-->
 
                 <tr>
                   <td class="td-title">
                     {{
-                      isNrc721(address.id) || isNrc20(address.id)
+                      isnrc721(address.id) || isNRC20(address.id)
                           ? "Contract"
                           : "ID"
                     }}
@@ -246,7 +246,7 @@
 
                 <tr>
                   <td class="td-title">
-                    NET Balance
+                    Net Balance
                   </td>
                   <td>
                     {{ address.balance | amount }}
@@ -264,8 +264,8 @@
                 </tr>
 
                 <!-- v-if="
-                   !nrc20BalancesDropdownOptions ||
-                     nrc20BalancesDropdownOptions.length > 0
+                   !NRC20BalancesDropdownOptions ||
+                     NRC20BalancesDropdownOptions.length > 0
                  "-->
                 <tr>
                   <td class="td-title">
@@ -275,13 +275,13 @@
                     <div style="max-width: 500px">
                       <v-select
                           :disabled="
-                          nrc20BalancesDropdownOptions &&
-                            nrc20BalancesDropdownOptions.length === 0
+                          NRC20BalancesDropdownOptions &&
+                            NRC20BalancesDropdownOptions.length === 0
                         "
-                          :placeholder="nrc20BalancesDropdownPlaceholder"
-                          :components="{ OpenIndicator: null }"
-                          :options="nrc20BalancesDropdownOptions"
-                          @input="onNrc20BalancesDropdown"
+                          :placeholder="NRC20BalancesDropdownPlaceholder"
+                          :compNetnts="{ OpenIndicator: null }"
+                          :options="NRC20BalancesDropdownOptions"
+                          @input="onNRC20BalancesDropdown"
                       ></v-select>
                     </div>
                   </td>
@@ -329,11 +329,11 @@
           </div>
         </div>
 
-        <NrcTokenTabs v-if="false && showNrc20Section">
+        <NrcTokenTabs v-if="false && showNRC20Section">
           <TabPane :name="'NRC20 Balance'">
             <section>
               <table class="explorer-table">
-                <div v-for="balanceOf in Nrc20Balance" :key="balanceOf.address">
+                <div v-for="balanceOf in NRC20Balance" :key="balanceOf.address">
                   <tr v-if="+balanceOf.balance">
                     <td v-if="+balanceOf.balance" class="td-title">
                       &lt;!&ndash;v-if="balanceOf.balance !==0"&ndash;&gt;
@@ -347,7 +347,7 @@
               </table>
             </section>
           </TabPane>
-          <TabPane v-if="false" :name="'NRC721'">
+          <TabPane v-if="false" :name="'nrc721'">
             coming soon...
           </TabPane>
         </NrcTokenTabs>
@@ -375,7 +375,7 @@
         </TransactionsTable>
 
         <!-- nrc721 table -->
-        <NRC721TransfersTable
+        <nrc721TransfersTable
             v-else-if="showWhich == 'nrc721'"
             :all-txs="Object.values(nrc721Transactions).map(a => ({ ...a }))"
             :tx-count="Object.values(nrc721Transactions).length"
@@ -395,9 +395,9 @@
                 :on-change="changeTab"
             />
           </slot>
-        </NRC721TransfersTable>
+        </nrc721TransfersTable>
 
-        <NRC721AssetsTable
+        <nrc721AssetsTable
             v-else-if="showWhich == 'nrc721Assets'"
             :all-txs="
             Object.values(nrc721Assets).length > 0
@@ -425,14 +425,14 @@
                 :on-change="changeTab"
             />
           </slot>
-        </NRC721AssetsTable>
+        </nrc721AssetsTable>
 
-        <Nrc20TransactionsTable
-            v-else-if="showWhich == 'nrc20'"
-            :all-txs="nrc20Txs"
+        <NRC20TransactionsTable
+            v-else-if="showWhich == 'NRC20'"
+            :all-txs="NRC20Txs"
             with-shards="true"
             :loading="loading"
-            :tx-count="nrc20TxsCount"
+            :tx-count="NRC20TxsCount"
             :page="page"
             :change-page="changePage"
         >
@@ -447,7 +447,7 @@
                 :on-change="changeTab"
             />
           </slot>
-        </Nrc20TransactionsTable>
+        </NRC20TransactionsTable>
 
         <StakingTransactionsTable
             v-else
@@ -483,10 +483,10 @@ import service from "../explorer/service";
 import LoadingMessage from "./LoadingMessage";
 import TransactionsTable from "./TransactionsTable";
 import StakingTransactionsTable from "./StakingTransactionsTable";
-import Nrc20TransactionsTable from "./Nrc20TransactionsTable";
+import NRC20TransactionsTable from "./NRC20TransactionsTable";
 import TransactionTableTabs from "./TransactionTableTabs";
-import NRC721TransfersTable from "./NRC721TransfersTable";
-import NRC721AssetsTable from "./NRC721AssetsTable";
+import nrc721TransfersTable from "./nrc721TransfersTable";
+import nrc721AssetsTable from "./nrc721AssetsTable";
 import NrcTokenTabs from "./NrcTokenTabs";
 import TabPane from "./TabPane";
 import Address from "./Address";
@@ -497,18 +497,18 @@ import axios from "axios";
 import { NRC721LIST_URL } from "../explorer/store";
 
 // todo break to parts. make clean
-const status = { staking: 1, regular: 0, nrc20: 2, nrc721: 3, nrc721Assets: 4 };
+const status = { staking: 1, regular: 0, NRC20: 2, nrc721: 3, nrc721Assets: 4 };
 const defaultStatus = "regular";
 export default {
   name: "AddressPage",
-  components: {
+  compNetnts: {
     LoadingMessage,
     TransactionsTable,
     StakingTransactionsTable,
     TransactionTableTabs,
-    NRC721TransfersTable,
-    NRC721AssetsTable,
-    Nrc20TransactionsTable,
+    nrc721TransfersTable,
+    nrc721AssetsTable,
+    NRC20TransactionsTable,
     NrcTokenTabs,
     TabPane,
     Address,
@@ -522,19 +522,19 @@ export default {
       loading: true,
       address: null,
       allTxs: [],
-      nrc20Txs: [],
-      nrc20TxsCount: 0,
+      NRC20Txs: [],
+      NRC20TxsCount: 0,
       allStakingTxs: [],
       txCount: 0,
       stakingTxCount: 0,
-      Nrc20Balance: {},
-      Nrc721Balance: [],
+      NRC20Balance: {},
+      nrc721Balance: [],
       $store: this.$store.data,
       nrc721TotalSupply: null,
       nrc721Assets: {},
       nrc721Transactions: {},
       nrc721Inventory: [],
-      nrc20ActualTotalSupply: 0
+      NRC20ActualTotalSupply: 0
     };
   },
   computed: {
@@ -544,31 +544,31 @@ export default {
     isContract() {
       return this.contractData && this.contractData.txId;
     },
-    nrc20BalancesDropdownPlaceholder() {
-      if (!Object.values(this.Nrc20Balance).length) {
+    NRC20BalancesDropdownPlaceholder() {
+      if (!Object.values(this.NRC20Balance).length) {
         return "Loading...";
       }
-      const nrc20 = Object.values(this.Nrc20Balance)
+      const NRC20 = Object.values(this.NRC20Balance)
           .filter(
               o => +o.balance !== 0 // || true
           )
           .filter(o => !isNaN(o.balance)).length;
 
-      const nrc721 = this.Nrc721Balance.filter(
+      const nrc721 = this.nrc721Balance.filter(
           o => +o.balance !== 0 // || true
       ).length;
 
       return (
           [
-            nrc20 > 0 ? `NRC20 - ${nrc20}` : "",
-            nrc721 > 0 ? `NRC721 - ${nrc721}` : ""
+            NRC20 > 0 ? `NRC20 - ${NRC20}` : "",
+            nrc721 > 0 ? `nrc721 - ${nrc721}` : ""
           ]
               .filter(a => a)
               .join(", ") || "—"
       );
     },
-    nrc20BalancesDropdownOptions() {
-      const nrc20 = Object.values(this.Nrc20Balance)
+    NRC20BalancesDropdownOptions() {
+      const NRC20 = Object.values(this.NRC20Balance)
           .filter(o => +o.balance !== 0)
           .filter(o => !isNaN(+o.balance))
           .map(o => ({
@@ -576,21 +576,21 @@ export default {
             code: o.address
           }));
 
-      const nrc721 = this.Nrc721Balance.map(({ address, name, balance }) => ({
+      const nrc721 = this.nrc721Balance.map(({ address, name, balance }) => ({
         code: address,
         label: `${name} - ${balance}`
       }));
 
-      return [...nrc20, ...nrc721];
+      return [...NRC20, ...nrc721];
     },
     showWhich() {
-      return this.$route.query.txType || defaultStatus; // 'staking','regular','nrc20';
+      return this.$route.query.txType || defaultStatus; // 'staking','regular','NRC20';
     },
-    showNrc20Section() {
-      if (!this.Nrc20Balance) {
+    showNRC20Section() {
+      if (!this.NRC20Balance) {
         return false;
       }
-      return Object.values(this.Nrc20Balance).reduce(
+      return Object.values(this.NRC20Balance).reduce(
           (a, o) => a || +o.balance,
           false
       );
@@ -603,16 +603,16 @@ export default {
           ? status[this.$route.query.txType]
           : status[defaultStatus];
     },
-    Nrc20Address() {
-      return this.$store.data.Nrc20Address;
+    NRC20Address() {
+      return this.$store.data.NRC20Address;
     },
-    Nrc721Data() {
+    nrc721Data() {
       return this.$store.data.nrc721;
     },
-    Nrc20Info() {
-      const res = this.Nrc20Address[this.address.id];
+    NRC20Info() {
+      const res = this.NRC20Address[this.address.id];
       if (!res) {
-        console.log("Nrc20Info called without reason");
+        console.log("NRC20Info called without reason");
         return {};
       }
 
@@ -628,14 +628,14 @@ export default {
     }
   },
   watch: {
-    Nrc20Address() {
+    NRC20Address() {
       if (this.address) {
-        this.nrc20BalanceUpdate();
+        this.NRC20BalanceUpdate();
       }
     },
-    Nrc721Data() {
+    nrc721Data() {
       if (this.address) {
-        this.getNRC721Data(this.address);
+        this.getnrc721Data(this.address);
         this.nrc721BalanceUpdate();
       }
     },
@@ -652,27 +652,27 @@ export default {
     this.getAddress();
   },
   methods: {
-    onNrc20BalancesDropdown(val) {
+    onNRC20BalancesDropdown(val) {
       this.$router.push(`/address/${val.code}`);
     },
-    onNrc20BalanceDropdown() {
+    onNRC20BalanceDropdown() {
     },
-    onError() {
-      this.Nrc20Info.logo = null;
+    Netrror() {
+      this.NRC20Info.logo = null;
     },
     bgStyle(name) {
       if (!name) {
         return {};
       }
       const palette = [
-        "#00ffff",
-        "#24dbff",
-        "#49b6ff",
-        "#6d92ff",
-        "#926dff",
-        "#b649ff",
-        "#db24ff",
-        "#ff00ff"
+        '#ffcc33',
+        '#ffc61a',
+        '#ffbf00',
+        '#e6ac00',
+        '#cc9900',
+        '#b38600',
+        '#997300',
+        '#806000',
       ];
       const c = name.charCodeAt(0) % palette.length;
       const backgroundColor = palette[c];
@@ -681,7 +681,7 @@ export default {
     changeTab(value) {
       let txType = "regular";
       if (value == 1) txType = "staking";
-      if (value == 2) txType = "nrc20";
+      if (value == 2) txType = "NRC20";
       if (value == 3) txType = "nrc721";
       if (value == 4) txType = "nrc721Assets";
       this.$router.replace({
@@ -689,13 +689,13 @@ export default {
         query: { txType }
       });
     },
-    changePage(value, nrc20QueryID) {
+    changePage(value, NRC20QueryID) {
       this.$router.replace({
         name: "AddressPage",
         query: {
           page: value + 1,
           txType: this.$route.query.txType,
-          nrc20QueryID
+          NRC20QueryID
         }
       });
     },
@@ -705,23 +705,23 @@ export default {
       const stakingTxs = {};
 
       if (this.$route.params.address.startsWith("0x")) {
-        this.$route.params.address = this.$store.data.hmy.hmySDK.crypto.toBech32(
+        this.$route.params.address = this.$store.data.ngy.ngySDK.crypto.toBech32(
             this.$route.params.address
         );
       }
       const address = this.$route.params.address;
-      const sortid = this.$route.params.nrc20QueryID;
+      const sortid = this.$route.params.NRC20QueryID;
 
       service
-          .getNrc20Txs({
+          .getNRC20Txs({
             id: address,
             pageSize: 20,
             pageIndex: this.page,
             sortid
           })
           .then(result => {
-            this.nrc20Txs = result.txs;
-            this.nrc20TxsCount = result.total;
+            this.NRC20Txs = result.txs;
+            this.NRC20TxsCount = result.total;
           });
 
       service
@@ -755,8 +755,8 @@ export default {
             // if address is deployed contract
             this.contractData = contractData;
             this.address = address;
-            await this.getNRC721Data(address);
-            this.nrc20BalanceUpdate();
+            await this.getnrc721Data(address);
+            this.NRC20BalanceUpdate();
             this.nrc721BalanceUpdate();
           })
           .finally(() => {
@@ -771,20 +771,20 @@ export default {
             this.loading = false;
           });
     },
-    isNrc20(address) {
-      return this.Nrc20Address[address] !== undefined;
+    isNRC20(address) {
+      return this.NRC20Address[address] !== undefined;
     },
-    isNrc721(address) {
+    isnrc721(address) {
       return (
-          this.Nrc721Data &&
-          this.Nrc721Data.length &&
-          this.Nrc721Data.find(e => e.contractAddress === address)
+          this.nrc721Data &&
+          this.nrc721Data.length &&
+          this.nrc721Data.find(e => e.contractAddress === address)
       );
     },
-    async getNRC721Data() {
+    async getnrc721Data() {
       // todo infos
 
-      const info = this.isNrc721(this.address.id);
+      const info = this.isnrc721(this.address.id);
       if (!info) {
         this.nrc721Transactions = [];
         this.nrc721Assets = {};
@@ -792,8 +792,8 @@ export default {
       }
       const address = info.contractAddress;
 
-      const hmy = this.$store.data.hmy;
-      const c = hmy.contract(this.$store.data.NRC721_ABI, address);
+      const ngy = this.$store.data.ngy;
+      const c = ngy.contract(this.$store.data.nrc721_ABI, address);
       try {
         this.nrc721TotalSupply = (
             await c.methods.totalSupply().call()
@@ -811,15 +811,15 @@ export default {
     },
     async nrc721BalanceUpdate() {
       const address = this.address.id;
-      const hmy = this.$store.data.hmy;
-      const toHex = hmy.hmySDK.crypto.fromBech32;
+      const ngy = this.$store.data.ngy;
+      const toHex = ngy.ngySDK.crypto.fromBech32;
       const tokens = this.$store.data.nrc721;
-      this.Nrc721Balance = (
+      this.nrc721Balance = (
           await Promise.all(
               Object.values(tokens).map(
                   async ({ name, symbol, contractAddress }) => {
-                    const c = hmy.contract(
-                        this.$store.data.NRC721_ABI,
+                    const c = ngy.contract(
+                        this.$store.data.nrc721_ABI,
                         contractAddress
                     );
                     const balance = (
@@ -839,7 +839,7 @@ export default {
 
       this.nrc721Inventory = (
           await Promise.all(
-              this.Nrc721Balance.map(o => {
+              this.nrc721Balance.map(o => {
                 return axios
                     .get(`${NRC721LIST_URL}/${o.address}/assets`)
                     .then(r => r.data);
@@ -851,38 +851,38 @@ export default {
 
       console.log("inventory", address, this.nrc721Inventory);
     },
-    async nrc20BalanceUpdate() {
-      const hmy = this.$store.data.hmy;
-      const toHex = hmy.hmySDK.crypto.fromBech32;
+    async NRC20BalanceUpdate() {
+      const ngy = this.$store.data.ngy;
+      const toHex = ngy.ngySDK.crypto.fromBech32;
 
       const address = this.address.id
-      if (this.isNrc20(address)) {
+      if (this.isNRC20(address)) {
         let actualTotalSupply = 0;
         try {
-          const c = hmy.contract(this.$store.data.NRC20_ABI, address);
+          const c = ngy.contract(this.$store.data.NRC20_ABI, address);
           actualTotalSupply = (await c.methods.totalSupply().call()).toString();
         } catch (e) {
         }
-        const decimals = (this.Nrc20Address[address] || {}).decimals;
-        this.nrc20ActualTotalSupply = decimals && actualTotalSupply && displayAmount(actualTotalSupply, decimals);
+        const decimals = (this.NRC20Address[address] || {}).decimals;
+        this.NRC20ActualTotalSupply = decimals && actualTotalSupply && displayAmount(actualTotalSupply, decimals);
       }
 
       const res = {};
 
       Promise.all(
-          Object.keys(this.Nrc20Address).map(async nrc20 => {
-            //for (let nrc20 in this.Nrc20Address) {
-            //if (this.Nrc20Balance[nrc20]) continue;
-            //console.log({nrc20});
+          Object.keys(this.NRC20Address).map(async NRC20 => {
+            //for (let NRC20 in this.NRC20Address) {
+            //if (this.NRC20Balance[NRC20]) continue;
+            //console.log({NRC20});
 
             let c;
             try {
-              c = hmy.contract(this.$store.data.NRC20_ABI, toHex(nrc20));
+              c = ngy.contract(this.$store.data.NRC20_ABI, toHex(NRC20));
             } catch (e) {
-              console.log({ e, nrc20 });
+              console.log({ e, NRC20 });
             }
 
-            const nrc20Info = this.Nrc20Address[nrc20];
+            const NRC20Info = this.NRC20Address[NRC20];
             let balance;
 
             try {
@@ -891,21 +891,21 @@ export default {
               // ...
             }
 
-            const balanceDisplay = displayAmount(balance, nrc20Info.decimals);
+            const balanceDisplay = displayAmount(balance, NRC20Info.decimals);
 
             return {
-              [nrc20]: {
-                name: nrc20Info.name,
-                id: nrc20Info.symbol,
+              [NRC20]: {
+                name: NRC20Info.name,
+                id: NRC20Info.symbol,
                 balance: balanceDisplay,
-                address: nrc20Info.address
+                address: NRC20Info.address
               }
             };
           })
       )
           .then(res => res.reduce((a, o) => ({ ...a, ...o }), {}))
           .then(res => {
-            this.Nrc20Balance = res;
+            this.NRC20Balance = res;
           });
     },
     showBalance() {

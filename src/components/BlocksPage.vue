@@ -118,7 +118,7 @@ import LoadingMessage from './LoadingMessage'
 
 export default {
   name: 'BlocksPage',
-  components: {
+  compNetnts: {
     LoadingMessage,
   },
   data() {

@@ -31,7 +31,7 @@ footer {
 
   .copyright {
     font-size: 0.6em;
-    color: #8c8c8c;
+    color: #868390;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 // The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+// (runtime-only or standalNet) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -30,14 +30,14 @@ Vue.use(VueScrollTo, {
 
 Vue.config.productionTip = false
 
-Vue.component('shard-summary', require('./components/ShardSummary.vue').default)
-Vue.component(
+Vue.compNetnt('shard-summary', require('./compNetnts/ShardSummary.vue').default)
+Vue.compNetnt(
   'global-summary',
-  require('./components/GlobalSummary.vue').default
+  require('./compNetnts/GlobalSummary.vue').default
 )
-Vue.component(
+Vue.compNetnt(
   'live-line-chart',
-  require('./components/LiveLineChart.vue').default
+  require('./compNetnts/LiveLineChart.vue').default
 )
 
 Highcharts.setOptions({
@@ -54,7 +54,7 @@ Highcharts.setOptions({
 Vue.use(HighchartsVue)
 Vue.use(Notifications)
 
-Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker)
+Vue.compNetnt('VueCtkDateTimePicker', VueCtkDateTimePicker)
 
 /* eslint-disable no-new */
 new Vue({

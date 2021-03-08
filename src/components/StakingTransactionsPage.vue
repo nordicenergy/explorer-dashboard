@@ -124,10 +124,10 @@ import store from '../explorer/store'
 import service from '../explorer/service'
 import LoadingMessage from './LoadingMessage'
 import moment from 'moment'
-import Address from '../components/Address'
+import Address from '../compNetnts/Address'
 export default {
   name: 'StakingTransactionsPage',
-  components: {
+  compNetnts: {
     LoadingMessage,
     Address,
   },

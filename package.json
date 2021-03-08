@@ -1,8 +1,8 @@
 {
     "name": "nordic-energy-explorer",
     "version": "1.0.0",
-    "description": "Decentralized energy generation",
-    "author": "Nordic Energy",
+    "description": "Blockchain in the Energy Sector",
+    "author": "info@nordicenergy.io",
     "private": true,
     "scripts": {
         "dev": "DevMode=true npx vue-cli-service serve",
@@ -38,7 +38,7 @@
         "jdenticon": "^3.0.1",
         "lodash": "^4.17.20",
         "moment": "^2.23.0",
-        "moment-timezone": "^0.5.27",
+        "moment-timezNet": "^0.5.27",
         "numeral": "^2.0.6",
         "promise": "^8.1.0",
         "v-click-outside": "^3.1.2",
@@ -72,19 +72,5 @@
         "prettier": "^1.19.1",
         "prettier-eslint-cli": "^5.0.0",
         "vue-template-compiler": "^2.6.10"
-    },
-    "main": "babel.config.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/nordicenergy/explorer-dashboard.git"
-    },
-    "keywords": [
-        "blockchain",
-        "explorer"
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/nordicenergy/explorer-dashboard/issues"
-    },
-    "homepage": "https://explorer.nordicenergy.io"
+    }
 }

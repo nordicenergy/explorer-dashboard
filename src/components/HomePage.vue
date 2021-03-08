@@ -67,8 +67,8 @@
     font-size: 0.9em;
 
     &:hover {
-      /*border: 1px solid #1b295e;*/
-      /*color: #1b295e;*/
+      /*border: 1px solid #997300;*/
+      /*color: #997300;*/
     }
   }
 }
@@ -297,10 +297,10 @@
               <table class="explorer-table">
                 <tr>
                   <td class="td-title">
-                    NET
+                    Net
                   </td>
                   <td>
-                    <a :href="$store.data.NET_HOLDERURL" target="_blank">{{
+                    <a :href="$store.data.Net_HOLDERURL" target="_blank">{{
                       100000
                     }}</a>
                   </td>
@@ -335,7 +335,7 @@
                   :on-change="changeTab"
                   :title-postfix-tx="globalData.txCount"
                   :title-postfix-staking-tx="globalData.stakingTxCount"
-                  :title-postfix-nrc20-tx="globalData.nrc20TxsCount"
+                  :title-postfix-NRC20-tx="globalData.NRC20TxsCount"
                 />
                 <div class="secondary-info">
                   <div class="timer">
@@ -439,7 +439,7 @@
                   :on-change="changeTab"
                   :title-postfix-tx="globalData.txCount"
                   :title-postfix-staking-tx="globalData.stakingTxCount"
-                  :title-postfix-nrc20-tx="globalData.nrc20TxsCount"
+                  :title-postfix-NRC20-tx="globalData.NRC20TxsCount"
                 />
 
                 <div class="secondary-info">
@@ -579,7 +579,7 @@
                   :on-change="changeTab"
                   :title-postfix-tx="globalData.txCount"
                   :title-postfix-staking-tx="globalData.stakingTxCount"
-                  :title-postfix-nrc20-tx="globalData.nrc20TxsCount"
+                  :title-postfix-NRC20-tx="globalData.NRC20TxsCount"
                 />
 
                 <div class="secondary-info">
@@ -619,7 +619,7 @@
                       Token Amount
                     </div>
                   </div>
-                  <div v-for="tx in Nrc20Txs" :key="tx.tx.id" class="tr">
+                  <div v-for="tx in NRC20Txs" :key="tx.tx.id" class="tr">
                     <div class="td">
                       <router-link :to="'/shard/' + tx.tx.shardID">
                         {{ tx.tx.shardID }}
@@ -631,15 +631,15 @@
                       </router-link>
                     </div>
                     <div class="td">
-                      <Address :bech32="tx.nrc20tx.from" :show-raw="false" />
-                      <!--                      <router-link :to="'/address/' + tx.nrc20tx.from">
-                        {{ tx.nrc20tx.from | shorten }}
+                      <Address :bech32="tx.NRC20tx.from" :show-raw="false" />
+                      <!--                      <router-link :to="'/address/' + tx.NRC20tx.from">
+                        {{ tx.NRC20tx.from | shorten }}
                       </router-link>-->
                     </div>
                     <div class="td">
-                      <Address :bech32="tx.nrc20tx.to" :show-raw="false" />
-                      <!--                      <router-link :to="'/address/' + tx.nrc20tx.to">
-                        {{ tx.nrc20tx.to | shorten }}
+                      <Address :bech32="tx.NRC20tx.to" :show-raw="false" />
+                      <!--                      <router-link :to="'/address/' + tx.NRC20tx.to">
+                        {{ tx.NRC20tx.to | shorten }}
                       </router-link>-->
                     </div>
                     <div class="td">
@@ -650,17 +650,17 @@
                     </div>
                     <div
                       class="td"
-                      :title="tx.nrc20tx.amount"
+                      :title="tx.NRC20tx.amount"
                       style="max-width:200px;overflow:hidden"
                     >
-                      {{ nrc20Balance(tx.tx.to, tx.nrc20tx.amount) }}
+                      {{ NRC20Balance(tx.tx.to, tx.NRC20tx.amount) }}
                     </div>
                   </div>
                 </div>
                 <!-- <div class="show-more-container">
-                  <router-link to="/nrc20-txs" class="show-more-button">
+                  <router-link to="/NRC20-txs" class="show-more-button">
                     Show all
-                    <b>{{ globalData.nrc20TxsCount | number }}</b> transactions
+                    <b>{{ globalData.NRC20TxsCount | number }}</b> transactions
                   </router-link>
                 </div>-->
               </div>
@@ -668,10 +668,10 @@
                 <router-link
                   tag="button"
                   class="btn btn-light btn-block btn-mini"
-                  to="/nrc20-txs"
+                  to="/NRC20-txs"
                 >
                   Show all
-                  <b>{{ globalData.nrc20TxsCount | number || '' }}</b> NRC20
+                  <b>{{ globalData.NRC20TxsCount | number || '' }}</b> NRC20
                   transfer transactions
                 </router-link>
               </footer>
@@ -692,17 +692,17 @@ import LoadingMessage from './LoadingMessage'
 import CoinStats from './CoinStats'
 import TransactionTableTabs from './TransactionTableTabs'
 import Address from './Address'
-import CommonTabs from './NrcTokenTabs'
+import CommonTabs from './HrcTokenTabs'
 import TabPane from './TabPane'
 import { displayAmount } from '@/utils/displayAmount'
 
-const oneArgNrc20Methods = ['transfer', 'approve', 'mint', 'burn', 'burnFrom']
+const NetArgNRC20Methods = ['transfer', 'approve', 'mint', 'burn', 'burnFrom']
 
-const twoArgsNrc20Methods = ['transferFrom', 'allowance']
+const twoArgsNRC20Methods = ['transferFrom', 'allowance']
 
 export default {
   name: 'HomePage',
-  components: {
+  compNetnts: {
     LoadingMessage,
     CoinStats,
     TransactionTableTabs,
@@ -735,10 +735,10 @@ export default {
       return Math.ceil(this.globalData.blocks.length / this.pageSize)
     },
     showWhich() {
-      return this.$route.query.txType || 'regular' // 'staking','regular','nrc20';
+      return this.$route.query.txType || 'regular' // 'staking','regular','NRC20';
     },
     tabValue() {
-      const status = { staking: 1, regular: 0, nrc20: 2 }
+      const status = { staking: 1, regular: 0, NRC20: 2 }
       return status[this.$route.query.txType] || 0
     },
     lastBlocks() {
@@ -746,20 +746,20 @@ export default {
         shard => shard.blocks[0]
       )
     },
-    Nrc20Address() {
-      return this.$store.data.Nrc20Address
+    NRC20Address() {
+      return this.$store.data.NRC20Address
     },
-    Nrc20Txs() {
-      return this.$store.data.nrc20Txs.reduce((list, tx) => {
-        const c = this.$store.data.hmy.contract(this.$store.data.NRC20_ABI)
+    NRC20Txs() {
+      return this.$store.data.NRC20Txs.reduce((list, tx) => {
+        const c = this.$store.data.ngy.contract(this.$store.data.NRC20_ABI)
         const decodeObj = c.decodeInput(tx.input)
         if (
           decodeObj.abiItem &&
-          oneArgNrc20Methods.includes(decodeObj.abiItem.name)
+          NetArgNRC20Methods.includes(decodeObj.abiItem.name)
         )
           list.push({
             tx,
-            nrc20tx: {
+            NRC20tx: {
               from: tx.from,
               to: decodeObj.params[0],
               amount: decodeObj.params[1],
@@ -767,11 +767,11 @@ export default {
           })
         else if (
           decodeObj.abiItem &&
-          twoArgsNrc20Methods.includes(decodeObj.abiItem.name)
+          twoArgsNRC20Methods.includes(decodeObj.abiItem.name)
         )
           list.push({
             tx,
-            nrc20tx: {
+            NRC20tx: {
               from: decodeObj.params[0],
               to: decodeObj.params[1],
               amount: decodeObj.params[2],
@@ -785,7 +785,7 @@ export default {
     globalData() {
       this.resetTimer()
     },
-    Nrc20Address() {
+    NRC20Address() {
       this.updateHolders()
     },
   },
@@ -797,33 +797,33 @@ export default {
     // });
   },
   methods: {
-    nrc20info(id) {
-      return this.$store.data.Nrc20Address[id]
+    NRC20info(id) {
+      return this.$store.data.NRC20Address[id]
     },
-    nrc20Balance(id, amount) {
-      if (!this.nrc20info(id)) {
+    NRC20Balance(id, amount) {
+      if (!this.NRC20info(id)) {
         return amount
       }
 
       return (
-        displayAmount(amount, this.nrc20info(id).decimals) +
+        displayAmount(amount, this.NRC20info(id).decimals) +
         ' ' +
-        this.nrc20info(id).symbol
+        this.NRC20info(id).symbol
       )
     },
     async updateHolders() {
       let tokenHolders = []
-      for (let nrc20 in this.Nrc20Address)
-        tokenHolders.push({ id: nrc20, holders: 10000 })
+      for (let NRC20 in this.NRC20Address)
+        tokenHolders.push({ id: NRC20, holders: 10000 })
       this.tokenHolders = tokenHolders
     },
     bech32(hexaddr) {
-      return this.$store.data.hmy.hmySDK.crypto.toBech32(hexaddr)
+      return this.$store.data.ngy.ngySDK.crypto.toBech32(hexaddr)
     },
     changeTab(value) {
       let txType = 'regular'
       if (value == 1) txType = 'staking'
-      if (value == 2) txType = 'nrc20'
+      if (value == 2) txType = 'NRC20'
       this.$router.replace({
         name: 'HomePage',
         query: { txType },

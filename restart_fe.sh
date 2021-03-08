@@ -18,9 +18,9 @@ for pid in ${PID[@]}; do
                 popd
                 break
         fi
-done
+dNet
 
-# if no frontend process is found, just start a new one
+# if no frontend process is found, just start a new Net
 if [ "$FOUND" = "false" ]; then
         pushd $FEDIR
         npm run build

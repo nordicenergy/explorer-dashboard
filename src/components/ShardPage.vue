@@ -4,7 +4,7 @@
 .page-title {
   font-size: 1.8em;
   margin: @space-sm;
-  color: #997300;
+  color: #b38600;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -290,7 +290,7 @@ import Address from './Address'
 
 export default {
   name: 'ShardPage',
-  components: {
+  compNetnts: {
     LoadingMessage,
     Address,
   },

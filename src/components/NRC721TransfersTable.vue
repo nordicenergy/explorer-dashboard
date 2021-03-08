@@ -89,8 +89,8 @@
 <script>
 import Address from './Address'
 export default {
-  name: 'HRC721TransfersTable',
-  components: { Address },
+  name: 'nrc721TransfersTable',
+  compNetnts: { Address },
   props: [
     'allTxs',
     'withShards',

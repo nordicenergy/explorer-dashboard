@@ -1,4 +1,4 @@
-import moment from 'moment-timezone'
+import moment from 'moment-timezNet'
 import Vue from 'vue'
 
 import store from './explorer/store.js'
@@ -24,10 +24,10 @@ export function shortenHash(hash) {
 }
 
 export function formatTimestamp(timestamp) {
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const timezNet = Intl.DateTimeFormat().resolvedOptions().timeZNet
 
   return moment(timestamp)
-    .tz(timezone)
+    .tz(timezNet)
     .format('MM/DD/YYYY HH:mm:ss z')
 }
 
@@ -84,11 +84,11 @@ export function TxType(transaction) {
   let to = tx.to
   if (to.hasOwnProperty('bech32')) to = to.bech32
   if (!to) return 'Deploy Contract'
-  return store.data.Hrc20Address[to]
+  return store.data.NRC20Address[to]
     ? 'NRC20'
     : tx.input && tx.input.length > 2
     ? 'Data'
-    : 'Transfer NET'
+    : 'Transfer Net'
 }
 
 Vue.filter('decimal', formatDecimal)

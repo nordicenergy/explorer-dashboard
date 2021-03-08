@@ -17,8 +17,8 @@
                 <VueCtkDateTimePicker
                   v-model="cursor"
                   format="YYYY-MM-DD hh:mm"
-                  color="#b38600"
-                  button-color="#b38600"
+                  color="#33cbda"
+                  button-color="#33cbda"
                   :no-clear-button="true"
                   :max-date="maxDate"
                 />
@@ -118,7 +118,7 @@ import Address from './Address'
 
 export default {
   name: 'TransactionsPage',
-  components: {
+  compNetnts: {
     LoadingMessage,
     Address,
   },

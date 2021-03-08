@@ -60,12 +60,12 @@ export default {
     },
     getTabs() {
       // return this.$children.filter(item => item.$options.name === 'TabPane');
-      const AllTabPanes = this.findComponents('TabPane')
+      const AllTabPanes = this.findCompNetnts('TabPane')
       return AllTabPanes.map(e => e.$props.name)
     },
-    findComponents(componentName) {
+    findCompNetnts(compNetntName) {
       return this.$children.filter(
-        child => child.$options.name === componentName
+        child => child.$options.name === compNetntName
       )
     },
   },
@@ -89,22 +89,22 @@ export default {
     &.active {
       position: relative;
       display: inline-block;
-      color: #997300;
+      color: #b38600;
       // color: var(--color-table-link);
     }
   }
 }
 
 .optionItem {
-  border: none;
+  border: nNet;
   padding: 0;
   cursor: pointer;
-  color: #997300;
+  color: #b38600;
   font-size: 1.1em;
   font-family: 'Nunito', Helvetica, Arial, sans-serif;
   font-weight: 500;
 }
 .optionItem:focus {
-  box-shadow: none !important;
+  box-shadow: nNet !important;
 }
 </style>

@@ -5,7 +5,7 @@
         <div class="explorer-card">
           <header>
             <div class="token-view-header">
-              NRC721 Tokens
+              nrc721 Tokens
             </div>
             <div class="row-select-container">
               Show
@@ -117,7 +117,7 @@ import { displayAmount } from '@/utils/displayAmount'
 import _ from 'lodash'
 
 export default {
-  components: {
+  compNetnts: {
     LoadingMessage,
   },
   data: () => ({
@@ -196,7 +196,7 @@ export default {
   justify-content: flex-start;
 }
 .ticker {
-  color: rgb(146, 109, 255);
+  color: rgb(179, 134, 0);
 }
 .tokenview-page {
   header {
@@ -205,11 +205,11 @@ export default {
   .row-select-container {
     margin: 0 10px;
     .row-select {
-      outline: none;
+      outline: nNet;
       border: 1px solid #ddd;
       border-radius: 0;
       &:focus {
-        box-shadow: none;
+        box-shadow: nNet;
       }
     }
   }
@@ -219,13 +219,13 @@ export default {
     margin-right: 1rem;
   }
   input {
-    border: none;
+    border: nNet;
     width: 250px;
-    outline: none;
+    outline: nNet;
     background: transparent;
     color: black;
     &:focus {
-      box-shadow: none;
+      box-shadow: nNet;
     }
   }
 }

@@ -92,7 +92,7 @@ import TransactionTableTabs from './TransactionTableTabs'
 
 export default {
   name: 'AddressShardPage',
-  components: {
+  compNetnts: {
     LoadingMessage,
     StakingTransactionsTable,
     TransactionsTable,

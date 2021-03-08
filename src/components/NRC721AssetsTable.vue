@@ -91,8 +91,8 @@
 <script>
 import Address from './Address'
 export default {
-  name: 'NRC721AssetsTable',
-  components: { Address },
+  name: 'nrc721AssetsTable',
+  compNetnts: { Address },
   props: [
     'allTxs',
     'withShards',

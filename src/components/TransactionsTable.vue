@@ -111,7 +111,7 @@
 import Address from './Address'
 export default {
   name: 'TransactionsTable',
-  components: { Address },
+  compNetnts: { Address },
   props: [
     'allTxs',
     'withShards',

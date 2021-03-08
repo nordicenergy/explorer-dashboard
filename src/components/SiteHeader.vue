@@ -14,7 +14,7 @@
     height: 7em;
     width: 10em;
     box-sizing: border-box;
-    background-image: url(../assets/nordicenergy-logo-white.svg);
+    background-image: url(../assets/harmony-logo-white.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 90%;
@@ -33,10 +33,10 @@
     align-items: center;
   }
   a.navbar-nav {
-    text-decoration: none;
+    text-decoration: nNet;
     padding: @space-md @space-md;
     transition: color @anim-duration @anim-easing;
-    color: #999999;
+    color: #a09ea7;
     &:hover {
       color: inherit;
     }
@@ -48,7 +48,7 @@
   .search {
     width: 30em;
     margin-left: @space-md;
-    flex: none;
+    flex: nNet;
     height: 3em;
     overflow: hidden;
     position: relative;
@@ -73,8 +73,8 @@
         color: #fff;
       }
       &:focus {
-        outline: none;
-        box-shadow: none;
+        outline: nNet;
+        box-shadow: nNet;
       }
     }
   }
@@ -94,7 +94,7 @@
   display: inline-block;
 
   padding: 4px;
-  border: none;
+  border: nNet;
   font-weight: bold;
   margin-right: -1px;
   cursor: pointer;
@@ -105,7 +105,7 @@
   display: inline-block;
 
   background-color: white;
-  color: #e6ac00;
+  color: #47b8eb;
   padding: 4px;
   margin-right: -1px;
   cursor: pointer;
@@ -117,7 +117,7 @@
   }
 
   .tagline {
-    display: none;
+    display: nNet;
   }
 }
 
@@ -141,12 +141,12 @@
 }
 </style>
 <template>
-  <header class="navbar-fixed-top hmy-bg">
+  <header class="navbar-fixed-top ngy-bg">
     <div class="container">
       <div class="navbar-header">
         <div class="site-brand flex-horizontal">
           <router-link class="navbar-brand" to="/" />
-          <span class="tagline">Decentralized Energy Generation</span>
+          <span class="tagline">Open Consensus for 10B</span>
         </div>
 
         <div class="header-menu">
@@ -156,7 +156,7 @@
               class="switch-cell"
                :class="!displayAddressETH ? 'switch-cell-inactive' : ''"
           @click="changeDisplayAddressETH(false)">
-            NET
+            Net
           </div>
           <div class="switch-cell"
                :class="displayAddressETH ? 'switch-cell-inactive' : ''"
@@ -172,7 +172,7 @@
               View all NRC20 Tokens
             </div>
             <div @click="showTokens721">
-              View all NRC721 Tokens
+              View all nrc721 Tokens
             </div>
           </MenuItem>
         </div>
@@ -217,7 +217,7 @@ import service from '../explorer/service'
 import MenuItem from './MenuItem'
 export default {
   name: 'SiteHeader',
-  components: {
+  compNetnts: {
     MenuItem,
   },
   data() {

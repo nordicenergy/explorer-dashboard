@@ -1,6 +1,6 @@
-# Nordic Energy Explorer Dashboard
+# Nordic Energy - Blockchain Explorer Dashboard
 
-The dashboard for Nordic Energy blockchain displaying interesting metrics.
+The dashboard for Nordic Energy blockchain in the energy sector.
 
 ## Build Setup
 

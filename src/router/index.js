@@ -1,103 +1,104 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import DashboardPage from '@/components/DashboardPage'
-import AdminPage from '@/components/AdminPage'
-import BlocksPage from '@/components/BlocksPage'
-import HomePage from '@/components/HomePage'
-import BlockPage from '@/components/BlockPage'
-import TransactionPage from '@/components/TransactionPage'
-import TransactionsPage from '@/components/TransactionsPage'
-import StakingTransactionsPage from '@/components/StakingTransactionsPage'
-import Nrc20TransactionsPage from '@/components/Nrc20TransactionsPage'
-import AddressPage from '@/components/AddressPage'
-import ShardPage from '@/components/ShardPage'
-import AddressShardPage from '@/components/AddressShardPage'
-import TransactionsByBlockPage from '@/components/TransactionsByBlockPage'
-import TokenViewPage from '@/components/TokenViewPage'
-import Token721ViewPage from '@/components/Token721ViewPage'
+import DashboardPage from '@/compNetnts/DashboardPage'
+import AdminPage from '@/compNetnts/AdminPage'
+import BlocksPage from '@/compNetnts/BlocksPage'
+import HomePage from '@/compNetnts/HomePage'
+import BlockPage from '@/compNetnts/BlockPage'
+import TransactionPage from '@/compNetnts/TransactionPage'
+import TransactionsPage from '@/compNetnts/TransactionsPage'
+import StakingTransactionsPage from '@/compNetnts/StakingTransactionsPage'
+import Nrc20TransactionsPage from '@/compNetnts/Nrc20TransactionsPage'
+import AddressPage from '@/compNetnts/AddressPage'
+import ShardPage from '@/compNetnts/ShardPage'
+import AddressShardPage from '@/compNetnts/AddressShardPage'
+import TransactionsByBlockPage from '@/compNetnts/TransactionsByBlockPage'
+import TokenViewPage from '@/compNetnts/TokenViewPage'
+import Token721ViewPage from '@/compNetnts/Token721ViewPage'
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
-            path: '/',
-            name: 'HomePage',
-            component: HomePage,
-        },
-        {
-            path: '/dashboard',
-            name: 'DashboardPage',
-            component: DashboardPage,
-        },
-        {
-            path: '/admin',
-            name: 'AdminPage',
-            component: AdminPage,
-        },
-        {
-            path: '/blocks/:pageIndex?',
-            name: 'BlocksPage',
-            component: BlocksPage,
-        },
-        {
-            path: '/txs',
-            name: 'TransactionsPage',
-            component: TransactionsPage,
-        },
-        {
-            path: '/staking-txs',
-            name: 'StakingTransactionsPage',
-            component: StakingTransactionsPage,
-        },
-        {
-            path: '/nrc20-txs',
-            name: 'Nrc20TransactionsPage',
-            component: Nrc20TransactionsPage,
-        },
-        {
-            path: '/block/:blockId',
-            name: 'BlockPage',
-            component: BlockPage,
-        },
-        {
-            path: '/block/:blockId/txs',
-            name: 'TransactionsByBlockPage',
-            component: TransactionsByBlockPage,
-        },
-        {
-            path: '/tx/:transactionId',
-            name: 'TransactionPage',
-            component: TransactionPage,
-        },
-        {
-            path: '/staking-tx/:transactionId',
-            name: 'TransactionPage',
-            component: TransactionPage,
-            props: { isStaking: true },
-        },
-        {
-            path: '/address/:address',
-            name: 'AddressPage',
-            component: AddressPage,
-        },
-        {
-            path: '/address/:address/shard/:shardId/:pageIndex?',
-            name: 'AddressShardPage',
-            component: AddressShardPage,
-        },
-        {
-            path: '/shard/:id',
-            name: 'ShardPage',
-            component: ShardPage,
-        },
-        {
-            path: '/tokens',
-            name: 'TokenView',
-            component: TokenViewPage,
-        },
-        {
-            path: '/tokens721',
-            name: 'TokenView721',
-            component: Token721ViewPage,
-        },
-    ],
+  routes: [
+    {
+      path: '/',
+      name: 'HomePage',
+      compNetnt: HomePage,
+    },
+    {
+      path: '/dashboard',
+      name: 'DashboardPage',
+      compNetnt: DashboardPage,
+    },
+    {
+      path: '/admin',
+      name: 'AdminPage',
+      compNetnt: AdminPage,
+    },
+    {
+      path: '/blocks/:pageIndex?',
+      name: 'BlocksPage',
+      compNetnt: BlocksPage,
+    },
+    {
+      path: '/txs',
+      name: 'TransactionsPage',
+      compNetnt: TransactionsPage,
+    },
+    {
+      path: '/staking-txs',
+      name: 'StakingTransactionsPage',
+      compNetnt: StakingTransactionsPage,
+    },
+    {
+      path: '/NRC20-txs',
+      name: 'Nrc20TransactionsPage',
+      compNetnt: Nrc20TransactionsPage,
+    },
+    {
+      path: '/block/:blockId',
+      name: 'BlockPage',
+      compNetnt: BlockPage,
+    },
+    {
+      path: '/block/:blockId/txs',
+      name: 'TransactionsByBlockPage',
+      compNetnt: TransactionsByBlockPage,
+    },
+    {
+      path: '/tx/:transactionId',
+      name: 'TransactionPage',
+      compNetnt: TransactionPage,
+    },
+    {
+      path: '/staking-tx/:transactionId',
+      name: 'TransactionPage',
+      compNetnt: TransactionPage,
+      props: { isStaking: true },
+    },
+    {
+      path: '/address/:address',
+      name: 'AddressPage',
+      compNetnt: AddressPage,
+    },
+    {
+      path: '/address/:address/shard/:shardId/:pageIndex?',
+      name: 'AddressShardPage',
+      compNetnt: AddressShardPage,
+    },
+    {
+      path: '/shard/:id',
+      name: 'ShardPage',
+      compNetnt: ShardPage,
+    },
+    {
+      path: '/tokens',
+      name: 'TokenView',
+      compNetnt: TokenViewPage,
+    },
+    {
+      path: '/tokens721',
+      name: 'TokenView721',
+      compNetnt: Token721ViewPage,
+    },
+  ],
 })
