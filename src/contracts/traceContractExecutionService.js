@@ -1,4 +1,4 @@
-import { AbiCoder } from '@harmony-js/contract'
+import { AbiCoder } from '@nordicenergy-js/contract'
 import { SDK_NODE } from '../explorer/globalConfig.js'
 import * as ngy from '../explorer/ngy'
 import {
